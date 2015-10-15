@@ -25,8 +25,9 @@
 	// 	"size": 60
 	// },
 	"rigidBody": {
-		"bounceX": 0.75,
-		"bounceY": 0.75
+		"gravity": 0.1,
+		"bounceX": 1,
+		"bounceY": 1
 	},
 	"collide": {
 		"width": 40,
