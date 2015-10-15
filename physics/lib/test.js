@@ -1,5 +1,5 @@
-var Engine = require("ocelot2d");
-var Entity = require("ocelot2d/core/Entity");
+var Engine = require("ahi");
+var Entity = require("ahi/core/Entity");
 
 Entity.defineComponent("foo", require("./components/Foo"));
 Entity.definePrefabs(require("./prefabs"));
