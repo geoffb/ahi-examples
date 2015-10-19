@@ -1,6 +1,7 @@
 {
 	"transform": {
-		"worldSpace": false
+		"worldSpace": false,
+		"layer": 1
 	},
 	"textRender": {
 		"text": "Screen space text",

@@ -1,13 +1,10 @@
-var exports = module.exports = function Foo () {
-	this.bar = "baz";
-};
+var exports = module.exports = function Foo () {};
 
 var proto = exports.prototype;
 
 proto.update = function () {
-	this.entity.spriteRender.sourceX = 0;
-};
-
-proto.triggerStay = function () {
-	this.entity.spriteRender.sourceX = 64;
+	var entity = this.entity;
+	var transform = entity.transform;
+	var spriteRender = entity.spriteRender;
+	transform.layerOrder = transform.position.y + spriteRender.sourceWidth / 2;
 };
