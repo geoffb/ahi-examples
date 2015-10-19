@@ -14,6 +14,11 @@ for (var i = 0; i < 20; ++i) {
 	player.rigidBody.velocity.x = Math.random() > 0.5 ? -speed : speed;
 	//player.rigidBody.velocity.y = Math.random() > 0.5 ? -speed : speed;
 	game.addEntity(player);
+
+	game.camera.camera.follow(player);
 }
+
+var score = Entity.fromPrefab("scoreUI");
+game.addEntity(score);
 
 game.start();

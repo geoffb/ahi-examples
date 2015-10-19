@@ -1,10 +1,5 @@
 {
-	"transform": {
-		"x": 200,
-		"y": 200,
-		"scaleX": 1,
-		"scaleY": 1
-	},
+	"transform": {},
 	// "shapeRender": {
 	// 	"points": [-50, -50, 50, -50, 50, 50, -50, 50],
 	// 	"fillStyle": "darkgreen",
@@ -25,7 +20,7 @@
 	// 	"size": 60
 	// },
 	"rigidBody": {
-		"gravity": 0.1,
+		"gravity": 0.5,
 		"bounceX": 1,
 		"bounceY": 1
 	},
