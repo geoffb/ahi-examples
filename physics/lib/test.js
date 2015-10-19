@@ -1,5 +1,6 @@
 var Engine = require("ahi");
 var Entity = require("ahi/core/Entity");
+var tween = require("ahi/core/tween");
 
 Entity.defineComponent("foo", require("./components/Foo"));
 Entity.definePrefabs(require("./prefabs"));
@@ -15,10 +16,14 @@ for (var i = 0; i < 20; ++i) {
 	//player.rigidBody.velocity.y = Math.random() > 0.5 ? -speed : speed;
 	game.addEntity(player);
 
-	game.camera.camera.follow(player);
+	// game.camera.camera.follow(player);
 }
 
 var score = Entity.fromPrefab("scoreUI");
 game.addEntity(score);
+
+tween.create(score.transform, {
+	rotation: Math.PI * 2
+}, 3000, 1000);
 
 game.start();
