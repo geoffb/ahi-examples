@@ -1,0 +1,11 @@
+{
+	"transform": {
+		"worldSpace": false,
+		"layer": 1
+	},
+	"textRender": {
+		"text": "Screen space text",
+		"textAlign": "left",
+		"textBaseline": "top"
+	}
+}
