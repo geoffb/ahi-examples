@@ -1,0 +1,44 @@
+var exports = module.exports = function (conf) {};
+
+exports.defaults = {
+	points: [],
+	strokeStyle: "black",
+	lineWidth: 1,
+	lineDash: null,
+	lineDashOffset: 0,
+	lineJoin: "miter",
+	lineCap: "butt"
+};
+
+var proto = exports.prototype;
+
+proto.clearPoints = function () {
+	this.points.length = 0;
+};
+
+proto.addPoint = function (x, y) {
+	this.points.push(x, y);
+};
+
+proto.render = function (ctx) {
+	var points = this.points;
+	var len = points.length;
+	if (len < 4) { return; }
+
+	ctx.beginPath();
+	ctx.moveTo(points[0], points[1]);
+	for (var i = 2; i < len; i += 2) {
+		ctx.lineTo(points[i], points[i + 1]);
+	}
+
+	if (this.lineDash) {
+		ctx.setLineDash(this.lineDash);
+		ctx.lineDashOffset = this.lineDashOffset;
+	}
+
+	ctx.lineWidth = this.lineWidth;
+	ctx.lineJoin = this.lineJoin;
+	ctx.lineCap = this.lineCap;
+	ctx.strokeStyle = this.strokeStyle;
+	ctx.stroke();
+};
