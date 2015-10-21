@@ -5,7 +5,7 @@ var tween = require("ahi/core/tween");
 Entity.defineComponent("foo", require("./components/Foo"));
 Entity.definePrefabs(require("./prefabs"));
 
-var game = new Engine();
+var game = new Engine(640, 480);
 
 for (var i = 0; i < 20; ++i) {
 	var player = Entity.fromPrefab("player");
