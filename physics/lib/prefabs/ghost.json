@@ -1,0 +1,17 @@
+{
+	"transform": {},
+	"spriteRender": {
+		"imagePath": "media/images/ghost.png",
+		"width": 64,
+		"height": 64
+	},
+	"rigidBody": {
+		"gravity": 0.5,
+		"bounceX": 1,
+		"bounceY": 1
+	},
+	"collide": {
+		"width": 50,
+		"height": 45
+	}
+}

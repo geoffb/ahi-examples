@@ -1,29 +1,35 @@
 var Engine = require("ahi");
 var Entity = require("ahi/core/Entity");
-var tween = require("ahi/core/tween");
 
-Entity.defineComponent("foo", require("./components/Foo"));
 Entity.definePrefabs(require("./prefabs"));
 
-var game = new Engine(640, 480);
+const WIDTH = 640;
+const HEIGHT = 480;
 
-for (var i = 0; i < 20; ++i) {
-	var player = Entity.fromPrefab("player");
-	player.transform.position.x = Math.round(Math.random() * 640);
-	player.transform.position.y = Math.round(Math.random() * 200);
+const COUNT = 10;
+
+// Init game engine
+var game = new Engine(WIDTH, HEIGHT);
+
+// Flag indicating whether debugging visualization are drawn
+game.renderGizmos = true;
+
+// Create N ghost entities with random position and velocity
+for (var i = 0; i < COUNT; ++i) {
+	var ghost = Entity.fromPrefab("ghost");
+	ghost.transform.position.x = Math.round(Math.random() * WIDTH);
+	ghost.transform.position.y = Math.round(Math.random() * HEIGHT / 2);
 	var speed = 0.05 + Math.random() * 0.1;
-	player.rigidBody.velocity.x = Math.random() > 0.5 ? -speed : speed;
-	//player.rigidBody.velocity.y = Math.random() > 0.5 ? -speed : speed;
-	game.addEntity(player);
-
-	// game.camera.camera.follow(player);
+	ghost.rigidBody.velocity.x = Math.random() > 0.5 ? -speed : speed;
+	ghost.rigidBody.velocity.y = Math.random() > 0.5 ? -speed : speed;
+	game.addEntity(ghost);
 }
 
-var score = Entity.fromPrefab("scoreUI");
-game.addEntity(score);
+// Center camera on the game area
+game.camera.transform.translate(
+	Math.round(WIDTH / 2),
+	Math.round(HEIGHT / 2)
+);
 
-tween.create(score.transform, {
-	rotation: Math.PI * 2
-}, 3000, 1000);
-
+// #SHIPIT
 game.start();
