@@ -1,0 +1,7 @@
+{
+	"name": "Ahi Sprite Example",
+	"main": "lib/main.js",
+	"files": [
+		"media"
+	]
+}

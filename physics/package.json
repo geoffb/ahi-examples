@@ -1,0 +1,8 @@
+{
+  "name": "ahi-examples",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ahi": "^0.1.0"
+  }
+}
