@@ -3,5 +3,8 @@
 	"main": "lib/index.js",
 	"files": [
 		"media"
+	],
+	"autoIndexPaths": [
+		"lib/prefabs"
 	]
 }
